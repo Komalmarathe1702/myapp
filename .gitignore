@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+junit.xml
+npm-audit-report.json
+trivy-report.json
+.env
+*.log

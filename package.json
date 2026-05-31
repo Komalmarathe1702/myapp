@@ -1,0 +1,30 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "Node.js REST API for Deakin SIT223/SIT753 DevOps Pipeline",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "build": "echo 'Build step: validating project structure...' && node -e \"require('./src/app'); console.log('App loads successfully.');\"",
+    "test": "jest --coverage --coverageReporters=lcov --coverageReporters=text",
+    "test:ci": "jest --ci --coverage --coverageReporters=lcov --coverageReporters=text --reporters=default --reporters=jest-junit"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "prom-client": "^14.2.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "nodemon": "^3.0.2",
+    "supertest": "^6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
+}
