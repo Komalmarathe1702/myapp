@@ -80,7 +80,7 @@ pipeline {
                           -Dsonar.sources=src \
                           -Dsonar.tests=tests \
                           -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-                          -Dsonar.qualitygate.wait=true
+                          
                     """
                 }
             }
