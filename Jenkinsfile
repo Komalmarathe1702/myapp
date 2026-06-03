@@ -232,7 +232,7 @@ pipeline {
                     docker run -d \
                       --name prometheus \
                       -p 9090:9090 \
-                      -v \${WORKSPACE}/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml \
+                     -v /var/jenkins_home/workspace/myapp-pipeline/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml \
                       prom/prometheus:latest \
                         --config.file=/etc/prometheus/prometheus.yml
                 """
