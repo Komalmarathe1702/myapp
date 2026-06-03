@@ -158,7 +158,7 @@ pipeline {
 
                 // Wait for app to start, then health check
                 sh 'sleep 5'
-                sh "curl -f http://localhost:${STAGING_PORT}/health || exit 1"
+                sh "curl -f http://host.docker.internal:${STAGING_PORT}/health || exit 1"
 
                 echo "Staging deployment SUCCESSFUL at http://localhost:${STAGING_PORT}"
             }
@@ -200,7 +200,7 @@ pipeline {
 
                 // Production health check
                 sh 'sleep 5'
-                sh "curl -f http://localhost:${PROD_PORT}/health || exit 1"
+                sh "curl -f http://host.docker.internal:${PROD_PORT}/health || exit 1"
 
                 echo "Production release ${IMAGE_TAG} LIVE at http://localhost:${PROD_PORT}"
             }
